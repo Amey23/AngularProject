@@ -1,0 +1,84 @@
+
+<br />
+<div class="center">
+  <label>Search &nbsp;</label>
+  <input type="text" name="Search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by product name..">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Sort&nbsp;</label>
+  <select [(ngModel)]='SortbyParam' style="padding:5px;border-radius:10px;">
+    <option value="prodPrice">Price</option>
+    <option value="prodName">Name</option>
+    <option value="prodexpdate">Expiry Date</option>
+  </select>
+  <!--<select [(ngModel)]='SortDirection'>
+    <option value="asc">asc</option>
+    <option value="desc">desc</option>
+  </select>-->
+  &nbsp;&nbsp;
+  <button type="button" (click)="onSortDirection()" class="btn btn-primary">
+    order
+    <i *ngIf="SortDirection==='asc'" class="fas fa-arrow-up"></i>
+    <i *ngIf="SortDirection==='desc'" class="fas fa-arrow-down"></i>
+  </button>
+</div>
+<br />
+<table class="center" *ngIf="products.length!=0; else hideProduct">
+  <tr style="background-color:#0A2033;color:white;">
+    <td>
+      ProductID
+    </td>
+    <td>
+      ProductName
+    </td>
+    <td>
+      ProductPrice
+    </td>
+    <td>
+      ProductExpDate
+    </td>
+    <!--<td>
+      ProductDescription
+    </td>-->
+    <td>
+      ProductImage
+    </td>
+  </tr>
+  <tr *ngFor="let product of products | search:{prodName:searchText} | sort:[SortbyParam,SortDirection]">
+    <td appTabledir>
+      {{product.prodId}}
+    </td>
+    <td appTabledir>
+      {{product.prodName}}
+    </td>
+    <td appTabledir>
+      {{product.prodPrice | number:'.0-2'}}
+    </td>
+    <td appTabledir>
+      {{product.prodexpdate | date}}
+    </td>
+    <!--<td appTabledir>
+      {{product.prodDesc}}
+    </td>-->
+    <td>
+      <!--<pinch-zoom appImage>-->
+      <img [src]='product.prodImage' appImage />
+      <!--</pinch-zoom>-->
+    </td>
+  </tr>
+</table>
+
+<ng-template #hideProduct>
+  <h1 style="color:red;">No products to display</h1>
+</ng-template>
+
+<br />
+<br />
+
+<!--<pinch-zoom>
+  <img src="../assets/l6.jpg" />
+</pinch-zoom>-->
+
+<br />
+<br />
+
+

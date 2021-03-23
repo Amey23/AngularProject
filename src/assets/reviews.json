@@ -1,0 +1,42 @@
+[
+  {
+    "id": 101,
+    "name": "Rohit",
+    "courseName": "Angular",
+    "email": "rohit@gmail.com",
+    "review": "Good",
+    "personImage": "../assets/p5.jpg"
+  },
+  {
+    "id": 102,
+    "name": "Shikhar",
+    "courseName": "Java",
+    "email": "shikhar@gmail.com",
+    "review": "Bad",
+    "personImage": "../assets/p4.jpg"
+  },
+  {
+    "id": 103,
+    "name": "Virat",
+    "courseName": "Web",
+    "email": "virat@gmail.com",
+    "review": "Good",
+    "personImage": "../assets/p6.jpg"
+  },
+  {
+    "id": 104,
+    "name": "Hardik",
+    "courseName": "Angular",
+    "email": "hardik@gmail.com",
+    "review": "Bad",
+    "personImage": "../assets/p9.jfif"
+  },
+  {
+    "id": 105,
+    "name": "Jasprit",
+    "courseName": "Java",
+    "email": "jasprit@gmail.com",
+    "review": "Good",
+    "personImage": "../assets/p10.jpg"
+  }
+]

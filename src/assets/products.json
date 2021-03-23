@@ -1,0 +1,42 @@
+[
+  {
+    "prodId": 101,
+    "prodName": "Laptop",
+    "prodPrice": 50000.973,
+    "prodexpdate": "2022/04/30 10:14:23",
+    "prodDesc": "Small, portable personal computer",
+    "prodImage": "../assets/l1.jpg"
+  },
+  {
+    "prodId": 102,
+    "prodName": "Headphone",
+    "prodPrice": 2000.326,
+    "prodexpdate": "2023/06/21 10:14:23",
+    "prodDesc": "Pair of small loudspeaker drivers worn on or around the head over ears",
+    "prodImage": "../assets/l3.png"
+  },
+  {
+    "prodId": 103,
+    "prodName": "Charger",
+    "prodPrice": 1000.784,
+    "prodexpdate": "2027/02/14 10:14:23",
+    "prodDesc": "Device used to put energy into a secondary cell or rechargeable battery",
+    "prodImage": "../assets/l4.jpg"
+  },
+  {
+    "prodId": 104,
+    "prodName": "Mobile",
+    "prodPrice": 25000.265,
+    "prodexpdate": "2022/12/22 10:14:23",
+    "prodDesc": "Portable telephone that can make and receive calls over a radio frequency",
+    "prodImage": "../assets/l5.jpg"
+  },
+  {
+    "prodId": 105,
+    "prodName": "Mouse",
+    "prodPrice": 800.193,
+    "prodexpdate": "2025/07/09 10:14:23",
+    "prodDesc": "Hand-held pointing device that detects two-dimensional motion relative to a surface.",
+    "prodImage": "../assets/l6.jpg"
+  }
+]

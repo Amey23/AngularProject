@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "coursename": "AngularJS",
+    "fees": 3000,
+    "ratings": 4.5,
+    "trainer": "../assets/p4.jpg"
+  },
+  {
+    "id": 2,
+    "coursename": "Angular",
+    "fees": 4000,
+    "ratings": 4.5,
+    "trainer": "../assets/p5.jpg"
+  },
+  {
+    "id": 3,
+    "coursename": "React",
+    "fees": 2000,
+    "ratings": 4,
+    "trainer": "../assets/p6.jpg"
+  },
+  {
+    "id": 4,
+    "coursename": "Karma",
+    "fees": 5000,
+    "ratings": 3.5,
+    "trainer": "../assets/p9.jfif"
+  },
+  {
+    "id": 5,
+    "coursename": "Jasmine",
+    "fees": 2500,
+    "ratings": 4,
+    "trainer": "../assets/p10.jpg"
+  }
+]

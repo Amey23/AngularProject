@@ -1,0 +1,128 @@
+<app-header></app-header>
+
+      <div class="container-fluid" style="background-color: #333;padding-top:50px;">
+
+        <div class="jumbotron-fluid" style="padding:50px;padding-top:115px;color:white;height:530px;">
+          <h1 class="display-4">{{'Hello, world!' | translate}}</h1>
+          <p class="lead">
+            Code your future to design the successful program,
+            Compile it through efforts,
+            Run it through Hardwork & Luck,
+            Debug it through Love!!
+          </p>
+          <hr class="my-4">
+          <p>
+            <b>DeveloperHub</b> Institute is committed to customer satisfaction. In the past 33 years,
+            we have created a very friendly learning environment with the latest computer
+            hardware and software technologies, whether you are new to the computer industry
+            or are looking to improve your skills, we have the right course for you. well-qualified,
+            experienced certified instructors train the participants with easy-to-use step by step
+            training material in the most optimized period of time. 
+          </p>
+          <button class="btn btn-primary" [routerLink]='["/Tech"]' routerLinkActive='active'>
+            View Courses
+          </button>
+        </div>
+        </div>
+<br /><br /><br />
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="card" style="text-align:center;border:2px solid #333;overflow:hidden;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="../assets/java.png" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Java</h5>
+                  <p class="card-text">
+                    Object-oriented programming language that is designed to have
+                    as few implementation dependencies as possible.
+                  </p>
+                  <button type="button" class="btn btn-primary" [routerLink]='["/Tech/Java"]' routerLinkActive='active'>Purchase</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="card" style="text-align:center;border:2px solid #333;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="../assets/angular1.png" class="img-fluid" style="padding-top:10px;" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Angular</h5>
+                  <p class="card-text">
+                    Angular (commonly referred to "Angular 2+" or "Angular") is a
+                    TypeScript-based open-source web application framework.
+                  </p>
+                  <button type="button" class="btn btn-primary" [routerLink]='["/Tech/Angular"]' routerLinkActive='active'>Purchase</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="card" style="text-align:center;border:2px solid #333;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="../assets/www.png" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Web technology</h5>
+                  <p class="card-text">
+                    Refers to the means by which computers communicate with
+                    each other using markup languages and multimedia packages.
+                  </p>
+                  <button type="button" class="btn btn-primary" [routerLink]='["/Tech/Web"]' routerLinkActive='active'>Purchase</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br /><br /><br />
+          
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="card" style="height:400px;">
+                <h5 class="card-header">Training Benefits</h5>
+                <div class="card-body">
+                  <h6 class="card-title">1. Increased  efficiency of employees</h6>
+                  <p class="card-text">
+                    An effective training programme can make
+                    the employees of the company work in an effective manner.
+                    With training people gain confidence and this confidence is
+                    seen in the output  and results.
+                  </p>
+                  <h6 class="card-title">2. Reduced supervision</h6>
+                  <p class="card-text">
+                    An employee needs to be supervised when he works.
+                    When the employee has got sufficient training the amount
+                    of supervision  required is less as mistakes are less.
+                  </p>
+                  <h6 class="card-title">3. Less amount of wastage</h6>
+                  <p class="card-text">
+                    The amount of wastage by an employee is reduced a
+                    lot due to training and therefore if we take an account
+                    of the amount of wastage we find that the company has saved a lot of money.
+                  </p>
+                  <button class="btn btn-primary" [routerLink]='["/Tech"]' routerLinkActive='active' style="width:100%;">
+                    View Courses
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="../assets/ok.png" style="height:400px;width:300px;" />
+            </div>
+          </div>
+
+        </div>
+        <!--<router-outlet></router-outlet>-->
+        <br /><br /><br /><br /><br />
+<app-footer></app-footer>

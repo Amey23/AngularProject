@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "coursename": "HTML",
+    "fees": 3000,
+    "ratings": 4.5,
+    "trainer": "../assets/p9.jfif"
+  },
+  {
+    "id": 2,
+    "coursename": "CSS",
+    "fees": 4000,
+    "ratings": 4.5,
+    "trainer": "../assets/p4.jpg"
+  },
+  {
+    "id": 3,
+    "coursename": "Bootstrap",
+    "fees": 2000,
+    "ratings": 4,
+    "trainer": "../assets/p5.jpg"
+  },
+  {
+    "id": 4,
+    "coursename": "Javascript",
+    "fees": 5000,
+    "ratings": 3.5,
+    "trainer": "../assets/p6.jpg"
+  },
+  {
+    "id": 5,
+    "coursename": "PHP",
+    "fees": 2500,
+    "ratings": 4,
+    "trainer": "../assets/p10.jpg"
+  }
+]

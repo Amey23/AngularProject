@@ -1,0 +1,42 @@
+[
+  {
+    "id": 101,
+    "name": "Rohit",
+    "email": "rohit@gmail.com",
+    "salary": 30000,
+    "city": "Pune",
+    "empImage": "../assets/e1.jfif"
+  },
+  {
+    "id": 102,
+    "name": "Shikhar",
+    "email": "shikhar@gmail.com",
+    "salary": 25000,
+    "city": "Hyderabad",
+    "empImage": "../assets/e2.jfif"
+  },
+  {
+    "id": 103,
+    "name": "Virat",
+    "email": "virat@gmail.com",
+    "salary": 50000,
+    "city": "Nagpur",
+    "empImage": "../assets/e3.jfif"
+  },
+  {
+    "id": 104,
+    "name": "Hardik",
+    "email": "hardik@gmail.com",
+    "salary": 35000,
+    "city": "Pune",
+    "empImage": "../assets/e4.jfif"
+  },
+  {
+    "id": 105,
+    "name": "Jasprit",
+    "email": "jasprit@gmail.com",
+    "salary": 45000,
+    "city": "Delhi",
+    "empImage": "../assets/e5.jfif"
+  }
+]

@@ -1,0 +1,28 @@
+<ul>
+  <li> <h3 style="padding-top:10px;color:#4CAF50;">{{'DeveloperHub' | translate}}</h3></li>
+  <li style="float:right"> <a routerLink='/Login' routerLinkActive='active'>Logout</a></li>
+  <li style="float:right">
+    <select #locale (change)="changeLocale(locale.value)">
+      <option selected>Select Language</option>
+      <option value="en">English</option>
+      <option value="fr">French</option>
+      <option value="mr">Marathi</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </li>
+  <li style="float:right;padding-top:10px;">
+    &nbsp;
+    <i class="fa fa-globe" aria-hidden="true" style="color:white;"></i>&nbsp;&nbsp;
+  </li>
+  <li style="float:right"> <a routerLink='/ModelForm' routerLinkActive='active'>{{'ModelForm' | translate}}</a></li>
+  <li style="float:right"> <a routerLink='/Tech' routerLinkActive='active'>{{'Technology' | translate}}</a></li>
+  <!--<li style="float:right"> <a routerLink='/Employee' routerLinkActive='active'>Employee</a></li>
+  <li style="float:right"> <a routerLink='/Product' routerLinkActive='active'>Product</a> </li>-->
+  <li style="float:right"> <a routerLink='/Review' routerLinkActive='active'>{{'Review' | translate}}</a></li>
+  <li style="float:right"> <a routerLink='/Form' routerLinkActive='active'>{{'Form' | translate}}</a> </li>
+  <li style="float:right"> <a routerLink='/Home' routerLinkActive='active'>{{'Home' | translate}}</a></li>
+  <!--<li style="float:right"> <a routerLink='/Login' routerLinkActive='active'>Login</a></li>-->
+</ul>
+
+
+<!--<router-outlet></router-outlet>-->

@@ -1,0 +1,61 @@
+div.gap {
+  padding: 5px;
+}
+
+input.ng-valid {
+  border-right: 2px green;
+}
+
+input.ng-invalid {
+  border-right: 2px red;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+input {
+  padding: 5px;
+  /*background-color: lightskyblue;*/
+  color: #0A2033;
+  border-radius: 10px;
+  /*width: 500px;*/
+}
+
+table {
+  border: 1px solid;
+  border-color: #333;
+  text-align: center;
+  width: 600px;
+  /*height: 100px;*/
+  border-collapse: collapse;
+  font-size: 20px;
+  background-color: white;
+  overflow:hidden;
+}
+
+  table.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/*div.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}*/
+
+td, tr {
+  border: 3px solid;
+  border-color: #0A2033;
+  padding: 5px;
+}
+
+/* tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
+
+  tr:nth-child(even) {
+    background-color: white;
+  }*/

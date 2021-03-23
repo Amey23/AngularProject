@@ -1,0 +1,62 @@
+
+<br />
+<br />
+<!--<h3 style="text-align:center;">Web Courses</h3>-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+
+      <!--<div class="center">-->
+      <!--<h3 style="text-align:center;">Web Courses</h3>-->
+      <img src="../assets/java.png" style="width:200px;height:200px;margin-left:70px;" /><br /><br />
+      <label>Search &nbsp;</label>
+      <input type="text" name="Search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by product name..">
+      <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+      <br /><br />
+      <label>Sort&nbsp;</label>
+      <select [(ngModel)]='SortbyParam' style="padding:5px;border-radius:10px;">
+        <option value="coursename">Course</option>
+        <option value="fees">Fees</option>
+        <option value="ratings">Ratings</option>
+      </select>
+      <!--<select [(ngModel)]='SortDirection'>
+        <option value="asc">asc</option>
+        <option value="desc">desc</option>
+      </select>-->
+      &nbsp;&nbsp;
+      <button type="button" (click)="onSortDirection()" class="btn btn-primary">
+        order
+        <i *ngIf="SortDirection==='asc'" class="fas fa-arrow-up"></i>
+        <i *ngIf="SortDirection==='desc'" class="fas fa-arrow-down"></i>
+      </button>
+      <!--</div>-->
+      <br />
+    </div>
+
+    <!--<div class="col-sm-4"></div>-->
+    <div class="col-sm-8">
+
+      <table class="center">
+        <tr>
+          <th>ID</th>
+          <th>Courses</th>
+          <th>Fees</th>
+          <th>Ratings</th>
+          <th>Trainer</th>
+        </tr>
+        <tr *ngFor="let course of courses | search:{coursename:searchText} | sort:[SortbyParam,SortDirection]">
+          <td appTabledir>{{course.id}}</td>
+          <td appTabledir>{{course.coursename}}</td>
+          <td appTabledir>{{course.fees}}</td>
+          <td appTabledir>{{course.ratings}}</td>
+          <td><img [src]='course.trainer' /></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />

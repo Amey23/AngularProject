@@ -1,0 +1,149 @@
+<!--<div class="col-sm-3"></div>-->
+<app-header></app-header>
+
+<div class="container" style="padding-top:90px;">
+  <div class="row">
+    <div class='col-sm-6'>
+      <form #userForm='ngForm' (ngSubmit)='submitData(userForm.value)' style="padding: 20px; background-color: #333; color: white;">
+
+        <div class='form-group gap'>
+          <label>Name</label>
+          <input type='text' class='form-control' name='name' #nameRef='ngModel'
+                 ngModel required minlength='5' maxlength='12' pattern='[A-Z][a-z]+'>
+          <div *ngIf='nameRef.errors && (nameRef.dirty || nameRef.touched)' class='alert alert-danger'>
+            <div [hidden]='!nameRef.errors.required'>Please enter Name</div>
+            <div [hidden]='!nameRef.errors.minlength'>Please enter atleast 5 characters</div>
+            <div [hidden]='!nameRef.errors.pattern'>Please enter valid name</div>
+          </div>
+        </div>
+
+        <div class='form-group gap'>
+          <label>Email</label>
+          <input type='text' class='form-control' name='email' #emailRef='ngModel'
+                 ngModel required minlength='10' maxlength='30' pattern='[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+'>
+
+          <div *ngIf='emailRef.errors && (emailRef.dirty || emailRef.touched)' class='alert alert-danger'>
+            <div [hidden]='!emailRef.errors.required'>Please enter email</div>
+            <div [hidden]='!emailRef.errors.minlength'>Please enter atleast 10 characters</div>
+            <div [hidden]='!emailRef.errors.pattern'>Please enter valid email</div>
+          </div>
+        </div>
+
+        <div class="form-group gap">
+          <label>Gender</label>
+          <select name="gender" #genderRef='ngModel' ngModel required class="form-control">
+            <!--<option disabled>Select gender</option>-->
+            <option selected>Male</option>
+            <option>Female</option>
+            <option>Transgender</option>
+          </select>
+
+          <div *ngIf='genderRef.errors && (genderRef.dirty || genderRef.touched)' class='alert alert-danger'>
+            <div [hidden]='!genderRef.errors.required'>Gender is required</div>
+          </div>
+        </div>
+
+        <div class='form-group gap'>
+          <label>City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--<input type='text' class='form-control' name='email' #emailRef='ngModel'ngModel required minlength='10' maxlength='30' pattern='[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+'>-->
+          <input type="radio" value="Pune" name="place" ngModel #placeRef='ngModel' required>
+          <label class="radio-inline">
+            &nbsp;Pune
+          </label>&nbsp;&nbsp;
+          <input type="radio" value="Nagpur" name="place" ngModel #placeRef='ngModel' required>
+          <label class="radio-inline">
+            &nbsp;Nagpur
+          </label>
+          <div *ngIf='placeRef.errors && (placeRef.dirty || placeRef.touched)' class='alert alert-danger'>
+            <div [hidden]='!placeRef.errors.required'>Place is required</div>
+          </div>
+        </div>
+
+        <!--<div *ngIf="addCtrl.invalid">-->
+        <div ngModelGroup="address" #addCtrl="ngModelGroup">
+          <!--<div class="gap">
+            <label>State:</label>
+            <input type="text" name="state" minlength="5" class='form-control'
+                   #stateRef='ngModel' ngModel pattern='[A-Za-z]+' required>
+            <div *ngIf='stateRef.errors && (stateRef.dirty || stateRef.touched)' class='alert alert-danger'>
+              <div [hidden]='!stateRef.errors.required'>Please enter state</div>
+              <div [hidden]='!stateRef.errors.minlength'>Please enter atleast 5 characters</div>
+              <div [hidden]='!stateRef.errors.pattern'>Please enter valid state</div>
+            </div>
+          </div>-->
+
+          <div class="gap">
+            <label>Zip Code</label>
+            <input type="number" name="zip" minlength="6" class='form-control'
+                   #zipRef='ngModel' ngModel pattern='[0-9]{6}' required>
+            <div *ngIf='zipRef.errors && (zipRef.dirty || zipRef.touched)' class='alert alert-danger'>
+              <div [hidden]='!zipRef.errors.required'>Please enter zip code</div>
+              <div [hidden]='!zipRef.errors.minlength'>Please enter atleast 6 digits</div>
+              <div [hidden]='!zipRef.errors.pattern'>Please enter valid Zip code</div>
+            </div>
+          </div>
+
+          <div class="gap">
+            <label>Comments</label>
+            <textarea type="text" name="comments" minlength="5" class='form-control'
+                      #commentRef='ngModel' ngModel pattern='[A-Za-z]+' required>
+            </textarea>
+            <div *ngIf='commentRef.errors && (commentRef.dirty || commentRef.touched)' class='alert alert-danger'>
+              <div [hidden]='!commentRef.errors.required'>Please enter city</div>
+              <div [hidden]='!commentRef.errors.minlength'>Please enter atleast 5 characters</div>
+              <div [hidden]='!commentRef.errors.pattern'>Please enter valid city</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='form-group gap'>
+          <label>
+            <input type="checkbox" name="terms" #termsRef='ngModel' ngModel [(ngModel)]="isselected" required>
+            &nbsp;I agree to terms and conditions.
+          </label>&nbsp;&nbsp;
+          <div *ngIf='termsRef.errors && (termsRef.dirty || termsRef.touched)' class='alert alert-danger'>
+            <div [hidden]='!termsRef.errors.required'>Checkbox is required</div>
+          </div>
+        </div>
+        <!--</div>-->
+
+        <br />
+        <button [disabled]='!userForm.form.valid' type='submit' class='btn btn-success' style="width:50%;">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="userForm.reset()" style="width:50%;">Reset</button>
+
+
+      </form>
+    </div>
+
+    <div class="col-sm-6">
+
+      <table>
+        <tr *ngIf="myData.length>0" style="background-color:#4CAF50;">
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Place</th>
+          <!--<th>State</th>-->
+          <th>Postcode</th>
+          <th>Comments</th>
+        </tr>
+        <tr *ngFor="let user of myData">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.place}}</td>
+          <!--<td>{{user.address.state}}</td>-->
+          <td>{{user.address.zip}}</td>
+          <td>{{user.address.comments}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<app-footer></app-footer>

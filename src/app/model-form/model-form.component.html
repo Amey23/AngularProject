@@ -1,0 +1,167 @@
+
+<app-header></app-header>
+<div class="container" style="padding-top:90px;">
+  <div class="row">
+    <div class='col-sm-6'>
+      <!-- <form #userForm='ngForm' (ngSubmit)='submitData(userForm.value)'> -->
+      <form [formGroup]="userForm" (ngSubmit)='submitData()' style="overflow: hidden;padding: 20px; background-color: lightgrey; color: black;">
+
+        <div class='form-group gap'>
+          <label>Name</label>
+          <input formControlName='name' type="text" class='form-control' placeholder="Enter name...">
+
+          <div *ngIf="userForm.get('name').hasError('required') && userForm.get('name').touched" class='text text-danger'>Name is required </div>
+          <div *ngIf="userForm.get('name').errors?.pattern" class='text text-danger'>Name should be valid and Name should be 5 to 15 characters </div>
+
+        </div>
+
+        <div class='form-group gap'>
+          <label>Email</label>
+          <input formControlName='email' type="email" class='form-control' placeholder="Enter email...">
+
+          <div *ngIf="userForm.get('email').hasError('required') && userForm.get('email').touched" class='text text-danger'>Email is required </div>
+          <div *ngIf="userForm.get('email').errors?.pattern" class='text text-danger'>Enter valid email</div>
+
+        </div>
+
+        <div class='form-group gap'>
+          <label>Gender</label>
+          <select formControlName="gender" class="form-control">
+            <option disabled>Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Transgender</option>
+          </select>
+
+          <div *ngIf="userForm.get('gender').hasError('required') && userForm.get('gender').touched" class='text text-danger'>Gender is required </div>
+          <!--<div *ngIf="userForm.get('gender').errors?.pattern" class='text text-danger'>Enter valid email</div>-->
+        </div>
+
+        <div class='form-group gap'>
+          <label>City</label>&nbsp;&nbsp;
+          <label class="radio-inline">
+            <input type="radio" value="Pune" name="place" formControlName="place">&nbsp;Pune
+          </label>&nbsp;&nbsp;
+          <label class="radio-inline">
+            <input type="radio" value="Nagpur" name="place" formControlName="place">&nbsp;Nagpur
+          </label>
+
+          <div *ngIf="userForm.get('place').hasError('required') && userForm.get('place').touched" class='text text-danger'>Place is required </div>
+          <div *ngIf="userForm.get('gender').errors?.pattern" class='text text-danger'>Enter valid email</div>
+        </div>
+
+        <!--<div class='form-group gap'>
+    <label>Is Developer?</label>&nbsp;&nbsp;
+    <label><input type="checkbox" value="Developer" formControlName="developer" [(ngModel)]="isselected">&nbsp;Yes</label>
+    &nbsp;&nbsp;
+    <label><input type="checkbox" value="Tester" formControlName="developer">&nbsp;No</label>
+
+  </div>-->
+        <!--<div class='form-group gap'>
+  <div>
+    <label for="" class="form-label">Favourite Food</label>
+  </div>
+  <div class="form-check form-check-inline" *ngFor="let control of fruitsArray.controls; let i = index;">
+    <input class="form-check-input" type="checkbox" (change)="getSelectedFruitsValue()"
+           [formControl]="control"
+           id="inlineCheckbox{{i}}">
+    <label class="form-check-label" for="inlineCheckbox{{i}}">{{fruits[i]}}</label>
+  </div>-->
+        <!--<div>
+    <small id="fnHelp" *ngIf="favFruitsError && checkFruitControlsTouched()" class="form-text custom-invalid-feedback">Atleast choose one</small>
+  </div>-->
+        <!--</div>-->
+        <!--<div *ngFor="let data of emails">
+      <input type="checkbox" (change)="onChange(data.email, $event.target.checked)"> {{data.email}}<br>
+  </div>-->
+
+        <div class="form-group gap" formGroupName="address">
+          <label for="">Postcode</label>
+          <input type="number" class="form-control" formControlName="postcode">
+          <div *ngIf="userForm.get('address.postcode').invalid && userForm.get('address.postcode').touched" class='text text-danger'>Passcode is required</div>
+          <div *ngIf="userForm.get('address.postcode').errors?.pattern" class='text text-danger'>Enter valid Passcode (6 digits compulsory)</div>
+        </div>
+
+        <div class="form-group gap" formGroupName="address">
+          <label for="">Comments</label>
+          <textarea type="text" class="form-control" formControlName="comments"></textarea>
+          <div *ngIf="userForm.get('address.comments').hasError('required') && userForm.get('address.comments').touched" class='text text-danger'>State is required </div>
+          <div *ngIf="userForm.get('address.comments').errors?.pattern" class='text text-danger'>Enter valid Comments (5 to 15 alphabets)</div>
+        </div>
+
+        <div class='form-group gap'>
+          <label>
+            <input type="checkbox" value="Terms" formControlName="terms" required [(ngModel)]="isselected">
+            &nbsp;I agree to terms and conditions.
+          </label>&nbsp;&nbsp;
+          <div *ngIf="userForm.get('terms').hasError('required') && userForm.get('terms').touched" class='text text-danger'>Checkbox is required </div>
+          <!--<div *ngIf="userForm.get('developer').errors?.pattern" class='text text-danger'>Enter valid email</div>-->
+
+        </div>
+
+        <br />
+        <button [disabled]='!userForm.valid' type='submit' class='btn btn-success' style="width:50%;">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="userForm.reset()" style="width:50%;">Reset</button>
+      </form>
+    </div>
+    <div class="col-sm-6">
+      <!--<h2>Result</h2>-->
+      <!--<pre class="alert alert-dark">{{data.value | json}}</pre>-->
+      <!--<p>{{payLoad}}</p>-->
+      <table>
+        <tr *ngIf="myData.length>0" style="background-color:#4CAF50;">
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Place</th>
+          <th>Postcode</th>
+          <th>Comments</th>
+          <!--<th>Terms</th>-->
+        </tr>
+        <tr *ngFor="let user of myData">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.place}}</td>
+          <td>{{user.address.postcode}}</td>
+          <td>{{user.address.comments}}</td>
+          <!--<td>{{user.terms}}</td>-->
+
+        </tr>
+      </table>
+
+
+      <!--<h5>{{selectedFruitValues | json}}</h5>-->
+    </div>
+  </div>
+ </div>
+  <!--<div class="row">
+    <div class="col-sm-12">
+     
+      <table>
+        <tr *ngIf="myData.length>0">
+          <th>Name</th>
+          <th>Email</th>
+          <th>Street</th>
+          <th>Postcode</th>
+        </tr>
+        <tr *ngFor="let user of myData">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.address.street}}</td>
+          <td>{{user.address.postcode}}</td>          
+        </tr>
+      </table>
+    </div>
+  </div>
+  </div>-->
+
+
+  <!--<div class="col-md-6">
+    <label>
+      <strong>userForm : JSON</strong>
+    </label>
+    <pre class="alert alert-dark">{{userForm.value | json}}</pre>
+  </div>-->
+<br /><br /><br /><br />
+<app-footer></app-footer>

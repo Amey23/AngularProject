@@ -1,0 +1,48 @@
+<br />
+<div class="center">
+  <label>Search &nbsp;</label>
+  <input type="text" name="Search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by employee name..">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Sort&nbsp;</label>
+  <select [(ngModel)]='SortbyParam' style="padding:5px;border-radius:10px;background-color:lightblue;width:100px;">
+    <option value="id">ID</option>
+    <option value="name">Name</option>
+    <option value="salary">Salary</option>
+    <option value="city">City</option>
+  </select>
+  <!--<select [(ngModel)]='SortDirection'>
+    <option value="asc">asc</option>
+    <option value="desc">desc</option>
+  </select>-->
+  &nbsp;&nbsp;
+  <button type="button" (click)="onSortDirection()" class="btn btn-primary">
+    order
+    <i *ngIf="SortDirection==='asc'" class="fas fa-arrow-up"></i>
+    <i *ngIf="SortDirection==='desc'" class="fas fa-arrow-down"></i>
+  </button>
+</div>
+<br />
+
+
+<table class="center">
+  <tr>
+    <th>EmpID</th>
+    <th>EmpName</th>
+    <th>EmpEmail</th>
+    <th>EmpSalary</th>
+    <th>EmpCity</th>
+    <th>EmpImage</th>
+  </tr>
+  <tr *ngFor='let emp of employees | search:{name:searchText} | sort:[SortbyParam,SortDirection]' appTabledir>
+    <td>{{emp.id}}</td>
+    <td>{{emp.name}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.salary}}</td>
+    <td>{{emp.city}}</td>
+    <td><img [src]='emp.empImage' /></td>
+  </tr>
+</table>
+<br />
+<br />
+<br />
+<br />
